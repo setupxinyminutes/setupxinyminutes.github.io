@@ -1,0 +1,575 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Python3: Vanilla Setup - Setup X in Y Minutes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python3-vanilla-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Setup X in Y Minutes" class="md-header-nav__button md-logo" aria-label="Setup X in Y Minutes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Setup X in Y Minutes
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Python3: Vanilla Setup
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Setup X in Y Minutes" class="md-nav__button md-logo" aria-label="Setup X in Y Minutes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Setup X in Y Minutes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Python3: Vanilla Setup
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Python3: Vanilla Setup
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#packaging" class="md-nav__link">
+    Packaging
+  </a>
+  
+    <nav class="md-nav" aria-label="Packaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-first-project" class="md-nav__link">
+    Create your first project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-pytest-and-doctests" class="md-nav__link">
+    Testing: pytest and doctests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linting-and-formating-flake8-and-black" class="md-nav__link">
+    Linting and Formating: flake8 and black
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editoride" class="md-nav__link">
+    Editor/IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-checking" class="md-nav__link">
+    Type checking
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#packaging" class="md-nav__link">
+    Packaging
+  </a>
+  
+    <nav class="md-nav" aria-label="Packaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-first-project" class="md-nav__link">
+    Create your first project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-pytest-and-doctests" class="md-nav__link">
+    Testing: pytest and doctests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linting-and-formating-flake8-and-black" class="md-nav__link">
+    Linting and Formating: flake8 and black
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editoride" class="md-nav__link">
+    Editor/IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-checking" class="md-nav__link">
+    Type checking
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="python3-vanilla-setup">Python3: Vanilla Setup</h1>
+<p>This is a pretty vanilla setup for python 3 which uses the following tools:</p>
+<ul>
+<li>Editor/IDE: <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">VSCode</a></li>
+<li>Package manager: <a href="https://python-poetry.org/">poetry</a></li>
+<li>Linter: <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">flake8</a></li>
+<li>Formatter: <a href="https://black.readthedocs.io/en/stable/">black</a></li>
+<li>Testing: <a href="https://docs.python.org/3/library/doctest.html">pytest</a></li>
+<li>Type checker: <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">PyLance</a></li>
+</ul>
+<p>With your system package manager install a recent version of python
+(e.g. 3.8 or 3.9, <a href="https://www.python.org/doc/versions/">more details</a>)
+and <a href="https://ipython.org/">ipython</a> (better REPL with syntax highlighting and auto completion)
+<div class="highlight"><pre><span></span><code><span class="c1"># Ubuntu/Debian</span>
+sudo apt install python3.8 ipython
+
+<span class="c1"># TODO macOS</span>
+<span class="c1"># brew install ???</span>
+
+<span class="c1"># TODO Windows</span>
+<span class="c1"># brew install ???</span>
+</code></pre></div></p>
+<h2 id="packaging">Packaging</h2>
+<p><strong>TL;DR:</strong>
+use <a href="https://python-poetry.org/">poetry</a> to create projects, manage/install dependencies and
+virtualenvs;
+use <a href="https://github.com/pipxproject/pipx">pipx</a> to install python programs.</p>
+<p><a href="https://pip.pypa.io/en/stable/">pip</a>, the python package installer,
+allows you to install packages from <a href="https://pypi.org/">PyPI</a>, the python package index.
+It is best practice to install packages into so called "virtual environments",
+or "virtualenvs" for short.
+They separate dependencies from other projects and system dependencies.
+The CLI <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a>, or <code>python -m venv</code>, are used to create virtualenvs for you.</p>
+<p>Nowadays, high-level tools like <a href="https://python-poetry.org/">poetry</a> get more popular.
+Poetry describes itself as "Python packaging and dependency management made easy".
+It creates a basic project structure for you,
+manages the project's metadata and dependencies (via <code>pyproject.toml</code> and <code>poetry.lock</code>),
+can publish your packages to PyPI,
+and much more.</p>
+<p>There is another useful tool, <code>pipx</code> which install python command line tools.
+<code>pipx</code> automatically creates and manages virtualenvs for each installed program for you.</p>
+<h3 id="setup">Setup</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install pip - see https://pip.pypa.io/en/stable/installing/</span>
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+
+<span class="c1"># Install pipx</span>
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+
+<span class="c1"># In a new shell install poetry via pipx</span>
+python3 -m pipx install --user poetry
+</code></pre></div>
+<h3 id="create-your-first-project">Create your first project</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># create a new project</span>
+poetry new my_fancy_project
+<span class="nb">cd</span> my_fancy_project
+<span class="c1"># Enter (and create) the virtualenv</span>
+poetry shell
+
+<span class="c1"># Add dependencies, e.g. the `requests` lib.</span>
+<span class="c1"># This adds an entry to pyproject.toml and pins the version in poetry.lock</span>
+poetry add requests
+
+<span class="c1"># Check out the project structure</span>
+tree .
+<span class="c1"># .</span>
+<span class="c1"># ├── my_fancy_project</span>
+<span class="c1"># │   └── __init__.py</span>
+<span class="c1"># ├── pyproject.toml</span>
+<span class="c1"># ├── poetry.lock</span>
+<span class="c1"># ├── README.rst</span>
+<span class="c1"># └── tests</span>
+<span class="c1">#     ├── __init__.py</span>
+<span class="c1">#     └── test_my_fancy_project.py</span>
+
+<span class="c1"># Add dev dependencies, e.g. black, flake8, pytest</span>
+poetry add --dev black flake8 pytest
+</code></pre></div>
+<p><code>pyproject.toml</code> contains list the newly added dependencies.
+<code>poetry.lock</code> pins the exact versions of the dependencies.</p>
+<h2 id="testing-pytest-and-doctests">Testing: pytest and doctests</h2>
+<p>Python comes with two testing libs included: <a href="https://docs.python.org/3/library/unittest.html">unittest</a> and <a href="https://docs.python.org/3/library/doctest.html">doctests</a>.</p>
+<p>Doctests are great for testing and documenting the behavior of simple functions,
+e.g.:
+<div class="highlight"><pre><span></span><code><span class="c1"># file: my_fancy_project/utils.py</span>
+<span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Increment the given number by one.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; inc(0)</span>
+<span class="sd">        1</span>
+<span class="sd">        &gt;&gt;&gt; inc(1)</span>
+<span class="sd">        2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></p>
+<p>The <code>unittest</code> lib works well,
+but the alternative <a href="https://docs.pytest.org/en/stable/">pytest</a>
+allows you to write tests with less boilerplate,
+has great fixture handling,
+and supports lots of third party plugins.</p>
+<p>Pytest conventions:</p>
+<ul>
+<li>All tests go into the <code>tests/</code> folder.</li>
+<li>Test files have a <code>test_</code> prefix.</li>
+<li>Test functions have a <code>test_</code> prefix.</li>
+<li>Tests just use a simple <code>assert</code> statement.</li>
+</ul>
+<p>Example:
+<div class="highlight"><pre><span></span><code><span class="c1"># file: tests/test_utils.py.</span>
+<span class="kn">from</span> <span class="nn">my_fancy_project.utils</span> <span class="kn">import</span> <span class="n">inc</span>
+
+<span class="k">def</span> <span class="nf">test_inc</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">inc</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
+</code></pre></div></p>
+<p>Now you can run all tests (and doctests) with <code>pytest</code>:
+<div class="highlight"><pre><span></span><code>pytest --doctest-modules
+</code></pre></div></p>
+<h2 id="linting-and-formating-flake8-and-black">Linting and Formating: <code>flake8</code> and <code>black</code></h2>
+<p><a href="https://flake8.pycqa.org/en/latest/">flake8</a> is a commonly used linter.
+<a href="https://black.readthedocs.io/en/stable/">black</a> is code formatter with strong opinions that cannot be configured.
+Code always looks the same.
+Both tools play well with VSCode.</p>
+<p>However, <code>flake8</code> has to be configured to use the 88 char line length that
+<code>black</code> uses:
+<div class="highlight"><pre><span></span><code># file: .flake8
+[flake8]
+max-line-length = 88
+</code></pre></div></p>
+<h2 id="editoride">Editor/IDE</h2>
+<p><a href="https://code.visualstudio.com/">VSCode</a> with the python plugin <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">PyLance</a> is a good choice as editor.
+You get decent auto-completion, test running, debugging, linting, etc.
+It also integrates well with poetry (auto-detects the environments).</p>
+<h2 id="type-checking">Type checking</h2>
+<p>Python supports optional <a href="https://www.python.org/dev/peps/pep-0484/">type hints</a>.
+They are not used at runtime, but can be used by tools to do linting and
+improve auto-completion.
+By using <a href="https://code.visualstudio.com/">VSCode</a> and <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">PyLance</a> you already get improved linting and
+auto-completion if you add type annotations to your code.</p>
+<p>Alternatively or complementarity to using VSCode you can use dedicated tools
+like <a href="http://mypy-lang.org/">mypy</a> ("Mypy is an optional static type checker for Python").</p>
+<p>For more details regarding type hints checkout
+<a href="https://realpython.com/python-type-checking/">https://realpython.com/python-type-checking/</a>.</p>
+<!-- LINKS -->
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                About
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

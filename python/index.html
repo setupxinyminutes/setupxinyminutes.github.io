@@ -494,8 +494,14 @@ max-line-length = 88
 <p><a href="https://code.visualstudio.com/">VSCode</a> with the python plugin <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">PyLance</a> is a good choice as editor.
 You get decent auto-completion, test running, debugging, linting, etc.
 It also integrates well with poetry (auto-detects the environments).</p>
+<p>Install <a href="https://code.visualstudio.com/">VSCode</a> and then the PyLance plugin via <code>Ctrl+P</code>:
+<div class="highlight"><pre><span></span><code>ext install ms-python.vscode-pylance
+</code></pre></div></p>
+<p>Now VSCode is going to ask you for linter (select flake8) and auto-formatter
+(select black).</p>
 <h2 id="type-checking">Type checking</h2>
 <p>Python supports optional <a href="https://www.python.org/dev/peps/pep-0484/">type hints</a>.
+i.e. optional type annotations.
 They are not used at runtime, but can be used by tools to do linting and
 improve auto-completion.
 By using <a href="https://code.visualstudio.com/">VSCode</a> and <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">PyLance</a> you already get improved linting and

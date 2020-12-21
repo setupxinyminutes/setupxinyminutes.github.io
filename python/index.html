@@ -208,6 +208,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#basic-setup" class="md-nav__link">
+    Basic Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#packaging" class="md-nav__link">
     Packaging
   </a>
@@ -293,6 +300,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#basic-setup" class="md-nav__link">
+    Basic Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#packaging" class="md-nav__link">
     Packaging
   </a>
@@ -370,11 +384,22 @@
 <li>Testing: <a href="https://docs.python.org/3/library/doctest.html">pytest</a></li>
 <li>Type checker: <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">PyLance</a></li>
 </ul>
+<p>Note: to recreate this setup via docker checkout
+<a href="../python.Dockerfile">python.Dockerfile</a> and run:
+<div class="highlight"><pre><span></span><code>docker build --tag sxiym:python -f docs/python.Dockerfile . <span class="o">&amp;&amp;</span> <span class="se">\</span>
+docker run -it sxiym:python
+</code></pre></div></p>
+<h2 id="basic-setup">Basic Setup</h2>
 <p>With your system package manager install a recent version of python
 (e.g. 3.8 or 3.9, <a href="https://www.python.org/doc/versions/">more details</a>)
 and <a href="https://ipython.org/">ipython</a> (better REPL with syntax highlighting and auto completion)
 <div class="highlight"><pre><span></span><code><span class="c1"># Ubuntu/Debian</span>
-sudo apt install python3.8 ipython
+sudo apt update <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    sudo apt install <span class="se">\</span>
+        ipython3 <span class="se">\</span>
+        python3-distutils <span class="se">\</span>
+        python3-venv <span class="se">\</span>
+        python3.8
 
 <span class="c1"># TODO macOS</span>
 <span class="c1"># brew install ???</span>
@@ -382,6 +407,7 @@ sudo apt install python3.8 ipython
 <span class="c1"># TODO Windows</span>
 <span class="c1"># brew install ???</span>
 </code></pre></div></p>
+<p>Now you can enter the python REPL by just typing <code>python</code> or <code>ipython</code>.</p>
 <h2 id="packaging">Packaging</h2>
 <p><strong>TL;DR:</strong>
 use <a href="https://python-poetry.org/">poetry</a> to create projects, manage/install dependencies and
@@ -408,6 +434,7 @@ python3 get-pip.py
 
 <span class="c1"># Install pipx</span>
 python3 -m pip install --user pipx
+<span class="c1"># `pipx ensurepath` adds ~/.local/bin to your PATH</span>
 python3 -m pipx ensurepath
 
 <span class="c1"># In a new shell install poetry via pipx</span>
@@ -486,10 +513,12 @@ Code always looks the same.
 Both tools play well with VSCode.</p>
 <p>However, <code>flake8</code> has to be configured to use the 88 char line length that
 <code>black</code> uses:
-<div class="highlight"><pre><span></span><code># file: .flake8
-[flake8]
-max-line-length = 88
+<div class="highlight"><pre><span></span><code><span class="c1"># file: .flake8</span>
+<span class="k">[flake8]</span>
+<span class="na">max-line-length</span> <span class="o">=</span> <span class="s">88</span>
 </code></pre></div></p>
+<p>Now you can run <code>black my_fancy_project</code> and <code>flake my_fancy_project</code> manually,
+or use it with your editor (next section).</p>
 <h2 id="editoride">Editor/IDE</h2>
 <p><a href="https://code.visualstudio.com/">VSCode</a> with the python plugin <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">PyLance</a> is a good choice as editor.
 You get decent auto-completion, test running, debugging, linting, etc.
